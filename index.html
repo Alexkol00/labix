@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ee">
+  <meta name="description" content="Лабикс — интерактивная библиотека знаний. Математика, физика, электроника, Arduino, инженерия и обучающие игры. Исследуй, учись, создавай!">
+  <title>Лабикс — исследуй, учись, создавай</title>
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script defer src="./assets/catalog.js"></script>
+  <script defer src="./assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Перейти к урокам</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Лабикс — главная">
+        <img class="brand-mark-image" src="./assets/labix-mark.webp" alt="" width="44" height="44" decoding="async">
+        <span class="brand-name">лабикс<span class="brand-period">.</span><small>интерактивные знания</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основное меню">
+        <a href="#catalog">Уроки и игры</a><a href="#how">Как устроено</a><a href="#about">О проекте</a>
+      </nav>
+      <a class="header-cta" href="#catalog" id="headerFavoriteLink" data-show-favorites="true" aria-label="Показать избранные материалы">♡ <span>Избранное</span><span class="favorite-count" id="headerFavoriteCount">0</span></a>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> ОБРАЗОВАТЕЛЬНАЯ МАСТЕРСКАЯ</div>
+          <h1 id="hero-title">Учиться —<br>значит <em>открывать.</em></h1>
+          <p>Уроки, в которых хочется разобраться. Эксперименты, которые можно запустить самому. Математика, физика, инженерия и технологии — живо и понятно.</p>
+          <div class="hero-actions"><a href="#catalog" class="button button-dark">Найти свой урок <span aria-hidden="true">↗</span></a><a href="./lessons/addition.html" class="button button-soft">Начать с математики <span aria-hidden="true">→</span></a></div>
+          <div class="hero-micro"><span class="micro-icon">✳</span> ПОНЯТЬ <span>—</span> ПОПРОБОВАТЬ <span>—</span> СОЗДАТЬ</div>
+        </div>
+        <div class="hero-art" aria-label="Иллюстрация: эксперимент с формулами, схемами и математикой" role="img">
+          <div class="paper paper-one"><span class="paper-label">ЛАБОРАТОРИЯ / 01</span><div class="paper-main">U = I × R</div><div class="paper-note">Что будет, если изменить сопротивление?</div><svg viewBox="0 0 220 48" aria-hidden="true"><path d="M4 34H49l8-14 14 27 14-27 14 14h42m0 0h18m0 0 12-9 11 18 11-18 11 9h12" fill="none" stroke="#859a75" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+          <div class="paper paper-two"><span>ПОПРОБУЙ САМ</span><strong>2 + 3 = <span>5</span></strong><small>Математика может быть игрой</small></div>
+          <div class="hero-orbit"><span class="orbit-dot"></span> ✦</div>
+          <span class="hero-spark hero-spark-a">✳</span><span class="hero-spark hero-spark-b">＋</span>
+          <div class="hero-stamp">УЧИТЬСЯ<br>ИНТЕРЕСНО ↗</div>
+        </div>
+      </div>
+    </section>
+    <div class="running-note"><div class="container running-inner"><span>✱ ИДЕИ, КОТОРЫЕ МОЖНО ПРОВЕРИТЬ</span><span>◇ ДЛЯ ЛЮБОПЫТНЫХ В ЛЮБОМ ВОЗРАСТЕ</span><span>↗ ОТ ПЕРВОГО «ПОЧЕМУ?» ДО «ПОЛУЧИЛОСЬ!»</span></div></div>
+    <section id="catalog" class="catalog-section container" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><span class="section-kicker">01 / ВЫБИРАЙТЕ И ИССЛЕДУЙТЕ</span><h2 id="catalog-title">Выбирайте, что <em>интересно.</em></h2><p>15 интерактивных материалов. Ищите по теме, выбирайте предмет и открывайте свою следующую маленькую лабораторию.</p></div><div class="section-decoration" aria-hidden="true">✳</div></div>
+      <div class="catalog-tools">
+        <label class="search-field"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Поиск по урокам</span><input id="searchInput" type="search" autocomplete="off" placeholder="Поиск по названию, теме или описанию..." aria-controls="lessonGrid"><kbd>/</kbd></label>
+        <div class="catalog-filterbar"><div class="filters" id="categoryFilters" role="group" aria-label="Выберите категорию"></div><button class="favorite-filter" type="button" id="favoriteFilter" aria-pressed="false">♡ Избранное</button></div>
+        <div class="catalog-toolbar"><p class="result-counter" id="resultCount" aria-live="polite">Загружаем уроки…</p><label class="sort-box">Сортировка <select id="sortSelect" aria-label="Сортировка материалов"><option value="featured">По подборке</option><option value="title">По названию</option></select></label></div>
+      </div>
+      <div class="lesson-grid" id="lessonGrid"></div>
+      <div id="emptyState" class="empty-state" hidden><div class="empty-graphic">☄</div><h3>Пока ничего не нашлось</h3><p>Попробуйте другое слово или выберите все материалы.</p><button class="button button-dark" id="resetFilters" type="button">Сбросить фильтры</button></div>
+      <div class="catalog-bottom"><div class="catalog-bottom-decor">✦</div><div><span>НАША КОЛЛЕКЦИЯ РАСТЁТ</span><strong>Каждая новая идея — ещё один эксперимент.</strong></div><a href="#top">Наверх ↑</a></div>
+    </section>
+    <section class="how-section" id="how"><div class="container how-grid"><div><span class="section-kicker">02 / НЕ ПРОСТО ПРОЧИТАТЬ</span><h2>Разобраться.<br><em>И попробовать.</em></h2><p>В «Лабиксе» сложные идеи становятся понятными благодаря наглядным примерам, виртуальным инструментам и играм. Никаких обязательных регистраций: просто открывайте материал и исследуйте.</p><div class="mini-equation">любопытство <span>+</span> практика <span>=</span> открытие</div></div><div class="steps"><article><span>01</span><div><h3>Выберите то, что интересно</h3><p>Каталог, предметы и поиск помогут найти нужную тему.</p></div><b>↗</b></article><article><span>02</span><div><h3>Исследуйте на практике</h3><p>Меняйте параметры, собирайте схемы, наблюдайте результат.</p></div><b>↗</b></article><article><span>03</span><div><h3>Возвращайтесь к открытиям</h3><p>Добавляйте уроки в избранное — оно сохранится на этом устройстве.</p></div><b>↗</b></article></div></div></section>
+    <section class="about-section container" id="about"><div class="about-card"><div><span class="section-kicker">03 / НАША ИДЕЯ</span><h2>Учиться можно <em>с интересом.</em></h2><p>«Лабикс» — открытая мастерская знаний. Мы объединяем интерактивные уроки, инженерные инструменты и образовательные игры, чтобы учёба была понятной и увлекательной.</p><a href="#catalog">Перейти к материалам ↗</a></div><div class="about-symbol" aria-hidden="true"><span class="about-circle">+</span><span class="about-grid">▦</span><span class="about-star">✳</span></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><a class="footer-brand" href="#top"><img class="footer-brand-icon" src="./assets/labix-mark.webp" width="30" height="30" alt="" loading="lazy">лабикс<span>.</span></a><p>Исследуй. Учись. Создавай.</p><p>© <span id="currentYear">2026</span> Лабикс · Учиться интересно.</p><a href="#top">Наверх ↑</a></div><div class="container footer-note">Избранное хранится только в вашем браузере. Уроки, размещённые на сторонних сайтах, открываются в новой вкладке.</div></footer>
+</body>
+</html>
